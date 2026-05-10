@@ -2,7 +2,7 @@ import React from 'react'
 
 const Button2 = ({Text , className}) => {
   return (
-    <div className='m-[100px]'>
+    <div>
 <button className={`relative flex items-center px-4 py-2 font-pop font-semibold text-base text-c1 group ${className}`}>
 
 <span className="absolute -left-[10px] top-0 h-full w-5 rounded bg-c1 transition-all duration-400 group-hover:w-[calc(100%+10px)]"></span>
