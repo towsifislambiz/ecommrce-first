@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Button = ({className , Text}) => {
+const Button = ({ className = "", Text }) => {
   return (
-    <div>
-    <button className={`cursor-pointer bg-c1 text-c2 font-pop font-medium text-base border border-transparent px-12 py-4 rounded  hover:bg-transparent hover:text-c1 hover:border-c1 duration-400 ${className}`}>{Text}</button>
-    </div>
+    <button
+      className={`cursor-pointer font-pop font-medium text-base px-12 py-4 rounded duration-300 ${className}`}
+    >
+      {Text}
+    </button>
   )
 }
 

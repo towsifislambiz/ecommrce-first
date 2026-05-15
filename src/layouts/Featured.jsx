@@ -12,7 +12,7 @@ const Featured = () => {
   return (
    <section className='mb-[140px]'>
     <Container>
-<Button2 className='ml-3 ' Text='Featured'/>
+<Button2 className='ml-3 text-c1 text-base ' Text='Featured'/>
 <Heading className='mt-5 mb-15' Text='New Arrival'/>
 
 

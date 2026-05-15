@@ -20,7 +20,7 @@ const Flash = () => {
             <Container>
 <div className='w-full border-b border-black/30'>
     <div className='relative'>
-    <Button2 Text='Today’s'/>
+    <Button2 className='text-c1 text-base' Text='Today’s'/>
 
 
 <div className='mt-6 flex justify-between mb-10'>
@@ -38,7 +38,10 @@ const Flash = () => {
 </div>
 
 <div className='flex justify-center mb-[76px]'>
-    <Button Text='View All Products'/>
+<Button
+  className="bg-c1 text-white border border-transparent hover:bg-transparent hover:border-c1 hover:text-c1"
+  Text="View All Products"
+/>
 </div>
 </div>
       </Container>

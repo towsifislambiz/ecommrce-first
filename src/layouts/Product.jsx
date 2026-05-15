@@ -16,11 +16,14 @@ const Product = () => {
   return (
     <section className='mb-[140px]'>
 <Container>
-<Button2 className='ml-3 ' Text='This Month'/>
+  <Button2 className='text-c1 text-base' Text='This Month'/>
 
 <div className='flex justify-between items-center mt-5 mb-15'>
 <Heading Text='Best Selling Products'/>
-<Button Text='View All'/>
+<Button
+  className="bg-c1 text-white border border-transparent hover:bg-transparent hover:border-c1 hover:text-c1"
+  Text="View All "
+/>
 </div>
 
 

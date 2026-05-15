@@ -17,7 +17,7 @@ const Categorys = () => {
   <section>
     <Container>
 <div className='w-full border-b border-black/30 mb-[70px]'>
-    <Button2 className='ml-3' Text='Categories'/>
+    <Button2 className='text-c1 text-base' Text='Categories'/>
 
 <div className='flex justify-between mt-5 mb-15'>
 <Heading Text='Browse By Category'/>
