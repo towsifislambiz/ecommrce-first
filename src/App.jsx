@@ -10,7 +10,6 @@ import Product2 from './layouts/Product2'
 import Featured from './layouts/Featured'
 import Contact from './layouts/Contact'
 import Footer from './layouts/Footer'
-import Wish from './Pages/wish'
 
 
 const App = () => {
@@ -27,6 +26,7 @@ const App = () => {
 <Featured/>
 <Contact/>
 <Footer/>
+
 
 
 

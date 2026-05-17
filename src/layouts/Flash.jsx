@@ -26,7 +26,7 @@ const Flash = () => {
 <div className='mt-6 flex justify-between mb-10'>
 <Heading Text='Flash Sales'/>
 <Cross/>
-<Countdown className=' absolute top-[50px] left-[300px]' targetDate='2026-5-14'/> 
+<Countdown className=' absolute top-[50px] left-[300px]' targetDate='2026-5-28'/> 
 </div>
 </div>
 
