@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/Home.jsx";
-import About from "./pages/About.js";
+import About from "./pages/About.jsx";
 import ContactPart from "./pages/ContactPart.jsx";
 import SignUp from "./pages/SignUp.jsx";
 
