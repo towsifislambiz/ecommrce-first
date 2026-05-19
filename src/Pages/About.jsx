@@ -15,11 +15,12 @@ import Apimg2 from '../assets/Apimg2.png'
 import Apimg3 from '../assets/Apimg3.png'
 import Contact from '../layouts/Contact'
 import Footer from '../layouts/Footer'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
     <div>
-      <div className='mt-10 mb-10'>
+      <div className='mb-10'>
         <Subnav/>
       </div>
 
@@ -28,7 +29,7 @@ const About = () => {
 <section className='relative mb-80 min-h-[650px]'>
   <Container>
     <p className='font-pop font-normal text-sm text-black mb-10.5 cursor-pointer'>
-      <span className='text-black/50'>Home </span>
+      <span className='text-black/50'> <Link to="/">Home</Link> </span>
       <span className='ml-2 mr-2 text-black/50 text-xs'>/</span>
       About
     </p>

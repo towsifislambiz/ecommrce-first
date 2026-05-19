@@ -6,7 +6,7 @@ import Footer from '../layouts/Footer'
 
 const SingUp = () => {
   return (
-    <div className='mt-20'>
+    <div >
       <Subnav/>
       <Snav/>
       <SBannner/>

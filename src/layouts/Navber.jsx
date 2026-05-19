@@ -6,6 +6,7 @@ import Listitem1 from '../Components/Listitem1'
 import { FiSearch } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";
+import { Link } from 'react-router-dom'
 
 
 const Navber = () => {
@@ -20,10 +21,13 @@ const Navber = () => {
 
         <div>
             <ul className='flex gap-x-12'>
-<Listitem1 Text='Home'/>
-<Listitem1 Text='Contact'/>
-<Listitem1 Text='About'/>
-<Listitem1 Text='Sign Up'/>
+<Link to="/"><Listitem1 Text='Home'/></Link>
+<Link to="/ContactPart"><Listitem1 Text='Contact'/></Link>
+<Link to="/About"><Listitem1 Text='About'/></Link>
+<Link to="/SignUp"><Listitem1 Text='Sign Up'/></Link>
+
+
+
             </ul>
         </div>
 

@@ -1,37 +1,28 @@
-import React from 'react'
-import Subnav from './layouts/Subnav'
-import Navber from './layouts/Navber'
-import Banner from './layouts/Banner'
-import Flash from './layouts/Flash'
-import Categorys from './layouts/Categorys'
-import Product from './layouts/Product'
-import Experience from './layouts/Experience'
-import Product2 from './layouts/Product2'
-import Featured from './layouts/Featured'
-import Contact from './layouts/Contact'
-import Footer from './layouts/Footer'
+import {
+  createRoutesFromElements,
+  createBrowserRouter,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import ContactPart from "./Pages/ContactPart";
+import SingUp from "./Pages/SingUp";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/ContactPart" element={<ContactPart />} />
+      <Route path="/signup" element={<SingUp />} />
+    </Route>
+  )
+);
 
 const App = () => {
-  return (
-    <div>
-<Subnav/>
-<Navber/>
-<Banner/>
-<Flash/>
-<Categorys/>
-<Product/>
-<Experience/>
-<Product2/>
-<Featured/>
-<Contact/>
-<Footer/>
+  return <RouterProvider router={router} />;
+};
 
-
-
-
-    </div>
-  )
-}
-
-export default App
+export default App;

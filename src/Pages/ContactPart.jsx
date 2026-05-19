@@ -7,11 +7,12 @@ import Cimg1 from '../assets/Cimg1.png'
 import Cimg2 from '../assets/Cimg2.png'
 import Button from '../Components/Button'
 import Footer from '../layouts/Footer'
+import { Link } from 'react-router-dom'
 
-const ContacPart = () => {
+const ContactPart = () => {
   return (
     <div>
-      <div className=' mb-10'>
+      <div className='mb-10'>
         <Subnav/>
       </div>
       <Cnav/>
@@ -20,7 +21,7 @@ const ContacPart = () => {
       <section>
         <Container>
      
-            <p className='font-pop font-normal text-sm text-black mb-20 cursor-pointer'><span className='text-black/50 '>Home </span> <span className='ml-2 mr-2 text-black/50  text-xs'>/ </span> Cantact</p>
+            <p className='font-pop font-normal text-sm text-black mb-20 cursor-pointer'><span className='text-black/50 '> <Link to="/" >Home </Link> </span> <span className='ml-2 mr-2 text-black/50  text-xs'>/ </span> Cantact</p>
     
 <div className='flex justify-between mb-45'>
   <div className='w-4/12'>
@@ -108,4 +109,4 @@ const ContacPart = () => {
   )
 } 
 
-export default ContacPart
+export default ContactPart
