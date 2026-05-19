@@ -24,7 +24,7 @@ const Navber = () => {
 <Link to="/"><Listitem1 Text='Home'/></Link>
 <Link to="/ContactPart"><Listitem1 Text='Contact'/></Link>
 <Link to="/About"><Listitem1 Text='About'/></Link>
-<Link to="/Signup"><Listitem1 Text='Sign Up'/></Link>
+<Link to="/SignUp"><Listitem1 Text='Sign Up'/></Link>
             </ul>
         </div>
 
