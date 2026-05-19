@@ -1,9 +1,9 @@
 import React from 'react'
-import Container from '../Components/Container'
-import Image from '../Components/Image'
+import Container from '../components/Container'
+import Image from '../components/Image'
 import Eimg from '../assets/Eimg.png'
-import Heading2 from '../Components/Heading2'
-import Button from '../Components/Button'
+import Heading2 from '../components/Heading2'
+import Button from '../components/Button'
 
 const Experience = () => {
   return (

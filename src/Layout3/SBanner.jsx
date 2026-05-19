@@ -1,7 +1,7 @@
 import React from 'react'
-import Container from '../Components/Container'
-import Button from '../Components/Button'
-import Image from '../Components/Image'
+import Container from '../components/Container'
+import Button from '../components/Button'
+import Image from '../components/Image'
 import Google from '../assets/Google.png'
 import Sbimg from '../assets/Sb-img.png'
 

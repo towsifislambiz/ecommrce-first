@@ -1,11 +1,11 @@
 import React from "react";
 import Subnav from "../layouts/Subnav";
 import Cnav from "../layout4/Cnav";
-import Container from "../Components/Container";
-import Image from "../Components/Image";
+import Container from "../components/Container";
+import Image from "../components/Image";
 import Cimg1 from "../assets/Cimg1.png";
 import Cimg2 from "../assets/Cimg2.png";
-import Button from "../Components/Button";
+import Button from "../components/Button";
 import Footer from "../layouts/Footer";
 import { Link } from "react-router-dom";
 

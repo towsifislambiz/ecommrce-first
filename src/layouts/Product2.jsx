@@ -1,9 +1,9 @@
 import React from 'react'
-import Container from '../Components/Container'
-import Button2 from '../Components/Button2'
-import Heading from '../Components/Heading'
-import Cross from '../Components/Cross'
-import Card2 from '../Components/Card2'
+import Container from '../components/Container'
+import Button2 from '../components/Button2'
+import Heading from '../components/Heading'
+import Cross from '../components/Cross'
+import Card2 from '../components/Card2'
 import Pimg1 from '../assets/Pimg1.png'
 import Pimg2 from '../assets/Pimg2.png'
 import Pimg3 from '../assets/Pimg3.png'
@@ -12,7 +12,7 @@ import Fs5 from '../assets/Fs5.png'
 import F4s from '../assets/F4s.png'
 import F45s from '../assets/F45s.png'
 import Fs3 from '../assets/Fs3.png'
-import Button from '../Components/Button'
+import Button from '../components/Button'
 
 const Product2 = () => {
   return (
