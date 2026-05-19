@@ -5,7 +5,7 @@ import Image from '../Components/Image'
 import Google from '../assets/Google.png'
 import SbImg from '../assets/Sb-img.png'
 
-const SBannner = () => {
+const SBanner = () => {
   return (
     <section className='relative min-h-screen'>
       
@@ -77,4 +77,4 @@ const SBannner = () => {
   )
 }
 
-export default SBannner
+export default SBanner

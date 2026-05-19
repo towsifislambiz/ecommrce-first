@@ -1,18 +1,18 @@
 import React from 'react'
 import Subnav from '../layouts/Subnav'
 import Snav from '../Layout3/Snav'
-import SBannner from '../Layout3/SBannner'
+import SBanner from '../Layout3/SBanner'
 import Footer from '../layouts/Footer'
 
-const SingUp = () => {
+const SignUp = () => {
   return (
-    <div >
+    <div>
       <Subnav/>
       <Snav/>
-      <SBannner/>
-<Footer/>
+      <SBanner/>
+      <Footer/>
     </div>
   )
 }
 
-export default SingUp
+export default SignUp

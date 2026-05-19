@@ -11,7 +11,7 @@ import Featured from '../layouts/Featured'
 import Contact from '../layouts/Contact'
 import Footer from '../layouts/Footer'
 
-const home = () => {
+const Home = () => {
   return (
     <div>
       <Subnav/>
@@ -29,4 +29,4 @@ const home = () => {
   )
 }
 
-export default home
+export default Home
