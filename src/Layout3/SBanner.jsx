@@ -3,7 +3,7 @@ import Container from '../Components/Container'
 import Button from '../Components/Button'
 import Image from '../Components/Image'
 import Google from '../assets/Google.png'
-import SbImg from '../assets/Sb-img.png'
+import Sbimg from '../assets/Sb-img.png'
 
 const SBanner = () => {
   return (
@@ -11,7 +11,7 @@ const SBanner = () => {
       
       {/* Left Side Image */}
       <div className='absolute w-[54%] bg-[#CBE4E8] h-200 rounded flex justify-center items-center'>
-        <Image src={SbImg}/>
+        <Image className='w-full h-200' src={Sbimg}/>
       </div>
 
       <Container>
