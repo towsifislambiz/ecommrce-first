@@ -1,8 +1,8 @@
 import React from 'react'
 import Subnav from '../layouts/Subnav'
-import Wnavber from '../layout2/Wnavber'
-import Wishlist from '../layout2/Wishlist'
-import JustYou from '../layout2/JustYou'
+import Wnavber from '../Layout2/Wnavber'
+import Wishlist from '../Layout2/Wishlist'
+import JustYou from '../Layout2/JustYou'
 import Footer from '../layouts/Footer'
 const Wish = () => {
   return (

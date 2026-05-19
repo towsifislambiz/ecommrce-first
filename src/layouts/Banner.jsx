@@ -1,10 +1,10 @@
 import React from 'react'
-import Listitem2 from '../components/Listitem2'
-import Container from '../components/Container'
-import Image from '../components/Image'
+import Listitem2 from '../Components/Listitem2'
+import Container from '../Components/Container'
+import Image from '../Components/Image'
 import BannerImg from '../assets/Banner.png'   
 import { FaApple } from "react-icons/fa";
-import Heading2 from '../components/Heading2'
+import Heading2 from '../Components/Heading2'
 import { FaArrowRight } from "react-icons/fa6";
 
 

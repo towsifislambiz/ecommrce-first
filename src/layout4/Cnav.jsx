@@ -1,8 +1,8 @@
 import React from "react";
-import Container from "../components/Container.jsx";
-import Image from "../components/Image.jsx";
+import Container from "../Components/Container.jsx";
+import Image from "../Components/Image.jsx";
 import Logo from "../assets/Logo.png";
-import Listitem1 from "../components/Listitem1.jsx";
+import Listitem1 from "../Components/Listitem1.jsx";
 import { FiSearch } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";

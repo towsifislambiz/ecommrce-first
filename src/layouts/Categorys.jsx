@@ -1,9 +1,9 @@
 import React from 'react'
-import Container from '../components/Container'
-import Button2 from '../components/Button2'
-import Heading from '../components/Heading'
-import Cross from '../components/Cross'
-import Category from '../components/Category'
+import Container from '../Components/Container'
+import Button2 from '../Components/Button2'
+import Heading from '../Components/Heading'
+import Cross from '../Components/Cross'
+import Category from '../Components/Category'
 import { GiSmartphone } from "react-icons/gi";
 import { HiOutlineComputerDesktop } from "react-icons/hi2";
 import { BsSmartwatch } from "react-icons/bs";

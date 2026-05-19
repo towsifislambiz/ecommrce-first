@@ -1,6 +1,6 @@
 import React from 'react'
-import Container from '../components/Container'
-import Image from '../components/Image'
+import Container from '../Components/Container'
+import Image from '../Components/Image'
 import FLogo from '../assets/FLogo.png'
 import { TbSend2 } from "react-icons/tb";
 import Qr from '../assets/Qr.png'

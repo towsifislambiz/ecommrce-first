@@ -1,6 +1,6 @@
 import React from 'react'
-import Container from '../components/Container'
-import ContactCard from '../components/ContactCard'
+import Container from '../Components/Container'
+import ContactCard from '../Components/ContactCard'
 import { TbTruckDelivery } from "react-icons/tb";
 import { RiCustomerService2Line } from "react-icons/ri";
 import { AiOutlineSafety } from "react-icons/ai";

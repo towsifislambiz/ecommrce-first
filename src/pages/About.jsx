@@ -1,15 +1,15 @@
 import React from 'react'
 import Subnav from '../layouts/Subnav'
 import Cnav from '../layout4/Cnav'
-import Container from '../components/Container'
-import Image from '../components/Image'
+import Container from '../Components/Container'
+import Image from '../Components/Image'
 import Abimg from '../assets/Abimg.png'
-import Acard from '../components/Acard'
+import Acard from '../Components/Acard'
 import { LuHouse } from "react-icons/lu";
 import { BiDollarCircle } from "react-icons/bi";
 import { FaShopify } from "react-icons/fa";
 import { FaSackDollar } from "react-icons/fa6";
-import Aprofile from '../components/Aprofile'
+import Aprofile from '../Components/Aprofile'
 import Apimg1 from '../assets/Apimg1.png'
 import Apimg2 from '../assets/Apimg2.png'
 import Apimg3 from '../assets/Apimg3.png'
