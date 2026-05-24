@@ -9,6 +9,7 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import ContactPart from "./pages/ContactPart.jsx";
 import SignUp from "./pages/SignUp.jsx";
+import ProductPage from "./pages/ProductPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,12 +18,16 @@ const router = createBrowserRouter(
       <Route path="/about" element={<About />} />
       <Route path="/ContactPart" element={<ContactPart />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/ProductPage" element={<ProductPage />} />
+      
     </>
   )
 );
 
 const App = () => {
   return <RouterProvider router={router} />;
+
+ 
 };
   
 export default App;

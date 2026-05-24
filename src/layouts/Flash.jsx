@@ -13,6 +13,7 @@ import Fs5 from '../assets/Fs5.png'
 import F4s from '../assets/F4s.png'
 import F45s from '../assets/F45s.png'
 import Button from '../Components/Button'
+import { Link } from 'react-router-dom'
 
 const Flash = () => {
   return (
@@ -38,10 +39,10 @@ const Flash = () => {
 </div>
 
 <div className='flex justify-center mb-[76px]'>
-<Button
+<Link to="/ProductPage"><Button
   className="bg-c1 text-white border border-transparent hover:bg-transparent hover:border-c1 hover:text-c1"
   Text="View All Products"
-/>
+/></Link>
 </div>
 </div>
       </Container>

@@ -11,6 +11,7 @@ import Featured from "../layouts/Featured";
 import Contact from "../layouts/Contact";
 import Footer from "../layouts/Footer";
 
+
 const Home = () => {
   return (
     <div>
@@ -25,6 +26,8 @@ const Home = () => {
       <Featured/> 
       <Contact/>
       <Footer/>
+
+
     </div>
   )
 }

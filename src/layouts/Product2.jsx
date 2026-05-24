@@ -13,6 +13,7 @@ import F4s from '../assets/F4s.png'
 import F45s from '../assets/F45s.png'
 import Fs3 from '../assets/Fs3.png'
 import Button from '../Components/Button'
+import { Link } from 'react-router-dom'
 
 const Product2 = () => {
   return (
@@ -37,10 +38,11 @@ const Product2 = () => {
 </div> 
 
 <div className='flex justify-center'> 
+<Link to="/ProductPage">
 <Button
   className="bg-c1 text-white border border-transparent hover:bg-transparent hover:border-c1 hover:text-c1"
   Text="View All Products"
-/>
+/></Link>
 </div>
 
     </Container>
