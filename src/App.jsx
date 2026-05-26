@@ -10,6 +10,7 @@ import About from "./pages/About.jsx";
 import ContactPart from "./pages/ContactPart.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
+import Login from "./pages/Login.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="/ContactPart" element={<ContactPart />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/ProductPage" element={<ProductPage />} />
+      <Route path="/Login" element={<Login />} />
       
     </>
   )

@@ -4,6 +4,8 @@ import Button from '../Components/Button'
 import Image from '../Components/Image'
 import Google from '../assets/Google.png'
 import Sbimg from '../assets/Sb-img.png'
+import { Link } from 'react-router-dom'
+import Login from '../pages/Login'
 
 const SBanner = () => {
   return (
@@ -62,9 +64,11 @@ const SBanner = () => {
 
               <p className='font-pop font-normal text-sm text-black/70 text-center mt-8.5'>
                 Already have account?
-                <span className='border-b border-black/40 cursor-pointer ml-4'>
+               <Link to="/Login">
+                <span className='border-b border-black/40 cursor-pointer ml-4'>               
                   Log in
                 </span>
+               </Link>
               </p>
 
             </div>

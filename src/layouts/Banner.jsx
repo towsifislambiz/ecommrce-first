@@ -15,8 +15,8 @@ const Banner = () => {
        <div className='mt-10 flex justify-between'>
         <div className='w-[280px] relative'>
 <ul className='flex flex-col gap-y-4'>
-<Listitem2 Text='Woman’s Fashion'/>
-<Listitem2 Text='Men’s Fashion'/>
+<Listitem2 type={true} Text='Woman’s Fashion'/>
+<Listitem2 type={true} Text='Men’s Fashion'/>
 <Listitem2 Text='Electronics'/>
 <Listitem2 Text='Home & Lifestyle'/>
 <Listitem2 Text='Medicine'/>
