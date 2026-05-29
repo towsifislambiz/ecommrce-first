@@ -57,7 +57,9 @@ const Navber = () => {
   <BsCart3 className="hover:animate-icon-shake" />
 </span>
 <span className="text-2xl cursor-pointer">
+<Link to="/Account">
  <LuUser className='hover:animate-icon-shake' />
+</Link>
 </span>
 
 
