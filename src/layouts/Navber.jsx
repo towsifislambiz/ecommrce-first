@@ -45,7 +45,9 @@ const Navber = () => {
 
 
 <span className="text-2xl cursor-pointer mr-4">
+<Link to="/Wish">
   <FaRegHeart className="hover:animate-icon-shake" />
+</Link>
 </span>
 
 <span className="text-2xl cursor-pointer">

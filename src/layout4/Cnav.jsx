@@ -61,7 +61,9 @@ const Navber = () => {
             </div>
 
             <span className="group relative inline-block text-2xl cursor-pointer mr-5">
+              <Link to="/Wish">
               <FaRegHeart className="group-hover:animate-icon-shake" />
+              </Link>
             </span>
 
             <span className="text-2xl cursor-pointer mr-5">
@@ -69,7 +71,7 @@ const Navber = () => {
             </span>
 
             <span className="text-2xl cursor-pointer">
-             <Link to="/Account">
+             <Link to="Account">
               <LuUser className="hover:animate-icon-shake" />
              </Link>
             </span>

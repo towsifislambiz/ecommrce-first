@@ -6,7 +6,7 @@ import JustYou from '../Layout2/JustYou'
 import Footer from '../layouts/Footer'
 const Wish = () => {
   return (
-    <div className='mt-20 '>
+    <div>
       <Subnav/>
       <Wnavber/>
       <Wishlist />
