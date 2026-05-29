@@ -10,6 +10,7 @@ import Experience from "../layouts/Experience";
 import Featured from "../layouts/Featured";
 import Contact from "../layouts/Contact";
 import Footer from "../layouts/Footer";
+import Account from "./Account";
 
 
 const Home = () => {

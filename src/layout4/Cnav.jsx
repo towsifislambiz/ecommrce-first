@@ -69,7 +69,9 @@ const Navber = () => {
             </span>
 
             <span className="text-2xl cursor-pointer">
+             <Link to="/Account">
               <LuUser className="hover:animate-icon-shake" />
+             </Link>
             </span>
           </div>
 

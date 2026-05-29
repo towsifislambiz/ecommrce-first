@@ -11,6 +11,7 @@ import ContactPart from "./pages/ContactPart.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import Login from "./pages/Login.jsx";
+import Account from "./pages/Account.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path="/signup" element={<SignUp />} />
       <Route path="/ProductPage" element={<ProductPage />} />
       <Route path="/Login" element={<Login />} />
+      <Route path="/Account" element={<Account />} />
       
     </>
   )
