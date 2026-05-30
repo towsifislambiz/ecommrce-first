@@ -6,7 +6,9 @@ import Listitem1 from '../Components/Listitem1'
 import { FiSearch } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";
+import { LuUser } from "react-icons/lu";
 import { Link } from 'react-router-dom'
+
 
 
 const Navber = () => {
@@ -21,10 +23,10 @@ const Navber = () => {
 
         <div>
             <ul className='flex gap-x-12'>
-<Link to="/"><Listitem1 Text='Home'/></Link>
-<Link to="/ContactPart"><Listitem1 Text='Contact'/></Link>
-<Link to="/About"><Listitem1 Text='About'/></Link>
-<Link to="/SignUp"><Listitem1 Text='Sign Up'/></Link>
+<Link to='/'><Listitem1 Text='Home'/></Link>
+<Link to='/ContactPart'><Listitem1 Text='Contact'/></Link>
+<Link to='/About'><Listitem1 Text='About'/></Link>
+<Link to='/SignUp'><Listitem1 Text='Sign Up'/></Link>
 
 
 
@@ -44,17 +46,32 @@ const Navber = () => {
 
 
 
-<span className="text-2xl cursor-pointer mr-4">
+
+    <span className="group relative inline-block text-2xl cursor-pointer mr-5">
+
 <Link to="/Wish">
-  <FaRegHeart className="hover:animate-icon-shake" />
+  <FaRegHeart className="group-hover:animate-icon-shake" />
+</Link>
+
+  <span className="w-4 h-4 bg-c1 absolute -top-1 -right-1 rounded-full text-xs font-pop font-normal flex justify-center items-center text-white group-hover:animate-icon-shake">4</span>
+</span>
+
+
+
+ <span className="group relative inline-block text-2xl cursor-pointer mr-5">
+ <BsCart3 className="hover:animate-icon-shake" />
+
+  <span className="w-4 h-4 bg-c1 absolute -top-1 -right-1 rounded-full text-xs font-pop font-normal flex justify-center items-center text-white group-hover:animate-icon-shake">2</span>
+</span>
+
+
+<span className="text-2xl cursor-pointer">
+<Link to="/Account">
+ <LuUser className='hover:animate-icon-shake' />
 </Link>
 </span>
 
-<span className="text-2xl cursor-pointer">
- <Link to="/Cart">
-  <BsCart3 className="hover:animate-icon-shake" />
- </Link>
-</span>
+
         </div>
         </div>
       </Container>

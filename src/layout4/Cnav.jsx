@@ -67,7 +67,9 @@ const Navber = () => {
             </span>
 
             <span className="text-2xl cursor-pointer mr-5">
-              <BsCart3 className="hover:animate-icon-shake" />
+              <Link to="/Cart">
+               <BsCart3 className="hover:animate-icon-shake" />
+              </Link>
             </span>
 
             <span className="text-2xl cursor-pointer">

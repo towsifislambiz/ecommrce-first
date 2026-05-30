@@ -11,6 +11,7 @@ import Bimg4 from '../assets/Bimg4.png'
 import Fs5 from '../assets/Fs5.png'
 import F4s from '../assets/F4s.png'
 import F45s from '../assets/F45s.png'
+import { Link } from 'react-router-dom'
 
 const Product = () => {
   return (
@@ -20,10 +21,12 @@ const Product = () => {
 
 <div className='flex justify-between items-center mt-5 mb-15'>
 <Heading Text='Best Selling Products'/>
+<Link to="/ProductPage">
 <Button
   className="bg-c1 text-white border border-transparent hover:bg-transparent hover:border-c1 hover:text-c1"
   Text="View All "
 />
+</Link>
 </div>
 
 
