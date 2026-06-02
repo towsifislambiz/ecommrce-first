@@ -14,6 +14,7 @@ import Login from "./pages/Login.jsx";
 import Account from "./pages/Account.jsx";
 import Wish from "./pages/Wish.jsx";
 import Cart from "./pages/Cart.jsx"
+import CheckOut from "./pages/CheckOut.jsx"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path="/Account" element={<Account />} />
       <Route path="/Wish" element={<Wish/>} />
       <Route path="/Cart" element={<Cart/>} />
+      <Route path="/CheckOut" element={<CheckOut/>} />
       
     </>
   )

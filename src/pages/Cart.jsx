@@ -180,7 +180,9 @@ const Cart = () => {
 </div>
 
 <div className='flex justify-center mb-8'>
+<Link to="/CheckOut">
      <Button className='bg-c1 border border-transparent text-white hover:bg-transparent hover:border-c1 hover:text-c1' Text="Procees to checkout"/>
+</Link>
 </div>
                 </div>
                 </div>
