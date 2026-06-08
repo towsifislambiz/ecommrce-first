@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../Components/Container'
 import Button2 from '../Components/Button2'
 import Heading from '../Components/Heading'
@@ -16,6 +16,16 @@ import Button from '../Components/Button'
 import { Link } from 'react-router-dom'
 
 const Flash = () => {
+  let [alldata , SetAlldata]=useState([])
+
+useEffect(() => {
+  fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(data => SetAlldata(data))
+    .catch(err => console.log(err))
+}, [])
+
+
   return (
     <section className='mt-[140px] mb-20'>
             <Container>
@@ -32,10 +42,25 @@ const Flash = () => {
 </div>
 
 <div className='flex justify-between flex-wrap mb-15'>
-<Card src1={Fcard1} Text='HAVIT HV-G92 Gamepad' value1='$120' value2='$160' src2={Fs5} num='(88)'/>
-<Card src1={Fcard2} Text='AK-900 Wired Keyboard' value1='$960' value2='$1160' src2={F4s} num='(75)'/>
-<Card src1={Fcard3} Text='IPS LCD Gaming Monitor' value1='$370' value2='$400' src2={Fs5} num='(99)'/>
-<Card src1={Fcard4} Text='HAVIT HV-G92 Gamepad' value1='$375' value2='$400' src2={F45s} num='(99)'/>
+{
+  alldata.map((item , index) => (
+
+    index<4 &&
+
+    <Card
+      key={item.id}
+      src1={item.image}
+      Text={item.title}
+      value1={`$${item.price}`}
+      value2="$160"
+      src2={Fs5}
+      num="(88)"
+    />
+  ))
+}
+
+
+
 </div>
 
 <div className='flex justify-center mb-[76px]'>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../Components/Container'
 import Button2 from '../Components/Button2'
 import Heading from '../Components/Heading'
@@ -14,6 +14,17 @@ import F45s from '../assets/F45s.png'
 import { Link } from 'react-router-dom'
 
 const Product = () => {
+
+  let [alldata , SetAlldata]=useState([])
+
+useEffect(() => {
+  fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(data => SetAlldata(data))
+    .catch(err => console.log(err))
+}, [])
+
+
   return (
     <section className='mb-[140px]'>
 <Container>
@@ -30,11 +41,23 @@ const Product = () => {
 </div>
 
 
-<div className='flex justify-between'>
-    <Card src1={Bimg1} Text='The north coat' value1='$260' value2='$360' src2={Fs5} num='(65)'/>
-    <Card src1={Bimg2} Text='Gucci duffle bag' value1='$960' value2='$1160' src2={F45s} num='(65)'/>
-    <Card src1={Bimg3} Text='RGB liquid CPU Cooler' value1='$160' value2='$170' src2={F45s} num='(65)'/>
-    <Card src1={Bimg4} Text='The north coat' value1='$360'  src2={Fs5} num='(65)'/>
+<div className='flex flex-wrap gap-x-7.5'>
+{
+  alldata.map((item , index) => (
+
+    index>4  && index<9 &&
+
+    <Card
+      key={item.id}
+      src1={item.image}
+      Text={item.title}
+      value1={`$${item.price}`}
+      value2="$160"
+      src2={Fs5}
+      num="(88)"
+    />
+  ))
+}
 </div>
 </Container>
     </section>

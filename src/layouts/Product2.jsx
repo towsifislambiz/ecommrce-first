@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../Components/Container'
 import Button2 from '../Components/Button2'
 import Heading from '../Components/Heading'
@@ -16,6 +16,15 @@ import Button from '../Components/Button'
 import { Link } from 'react-router-dom'
 
 const Product2 = () => {
+  let [alldata , SetAlldata]=useState([])
+
+useEffect(() => {
+  fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(data => SetAlldata(data))
+    .catch(err => console.log(err))
+}, [])
+
   return (
   <section className='mb-[168px]'>
     <Container>
@@ -25,16 +34,26 @@ const Product2 = () => {
     <Cross/>
 </div>
 
-<div className='flex justify-between flex-wrap gap-y-15 mb-15'>
-    <Card2 src1={Pimg1} Text='Breed Dry Dog Food' value1='$100' src2={Fs3} num='(35)'/>
-    <Card2 src1={Pimg2} Text='CANON EOS DSLR Camera' value1='$360' src2={F4s} num='(95)'/>
-    <Card2 src1={Pimg3} Text='ASUS FHD Gaming Laptop' value1='$700' src2={Fs5} num='(325)'/>
-    <Card2 src1={Pimg4} Text='Curology Product Set ' value1='$500' src2={F4s} num='(145)'/>
+<div className='flex gap-x-7.5 flex-wrap gap-y-15 mb-15'>
 
-    <Card2 src1={Pimg1} Text='Breed Dry Dog Food' value1='$100' src2={Fs3} num='(35)'/>
-   <Card2 src1={Pimg2} Text='CANON EOS DSLR Camera' value1='$360' src2={F4s} num='(95)'/>
-    <Card2 src1={Pimg3} Text='ASUS FHD Gaming Laptop' value1='$700' src2={Fs5} num='(325)'/>
-    <Card2 src1={Pimg4} Text='Curology Product Set ' value1='$500' src2={F4s} num='(145)'/>
+  {
+  alldata.map((item , index) => (
+
+    index>9  && index<18 &&
+
+    <Card2
+      key={item.id}
+      src1={item.image}
+      Text={item.title}
+      value1={`$${item.price}`}
+      value2="$160"
+      src2={Fs5}
+      num="(88)"
+    />
+  ))
+}
+    
+ 
 </div> 
 
 <div className='flex justify-center'> 
