@@ -17,13 +17,15 @@ import { Link } from 'react-router-dom'
 
 const Flash = () => {
   let [alldata , SetAlldata]=useState([])
+  let [show , SetShow]=useState(4)
 
 useEffect(() => {
-  fetch('https://fakestoreapi.com/products')
-    .then(res => res.json())
-    .then(data => SetAlldata(data))
-    .catch(err => console.log(err))
+  fetch('https://dummyjson.com/products')
+    .then(res=>res.json())
+    .then(data=>SetAlldata(data.products))
 }, [])
+
+
 
 
   return (
@@ -41,20 +43,20 @@ useEffect(() => {
 </div>
 </div>
 
-<div className='flex justify-between flex-wrap mb-15'>
+<div className='flex gap-7.5 flex-wrap mb-15'>
 {
-  alldata.map((item , index) => (
+  alldata.slice(0,show).map((item , index) => (
 
-    index<4 &&
+  
 
     <Card
       key={item.id}
-      src1={item.image}
+      src1={item.thumbnail}
       Text={item.title}
       value1={`$${item.price}`}
       value2="$160"
       src2={Fs5}
-      num="(88)"
+      num={item.stock}
     />
   ))
 }
@@ -63,12 +65,33 @@ useEffect(() => {
 
 </div>
 
-<div className='flex justify-center mb-[76px]'>
-<Link to="/ProductPage"><Button
-  className="bg-c1 text-white border border-transparent hover:bg-transparent hover:border-c1 hover:text-c1"
-  Text="View All Products"
-/></Link>
+<div className='flex gap-x-5 justify-center mb-[76px]'>
+
+  {show > 4 && (
+    <div
+      className='mb-4'
+      onClick={() => SetShow(show - 4)}
+    >
+      <Button
+        className="bg-c1 text-white border border-transparent hover:bg-transparent hover:border-c1 hover:text-c1"
+        Text="Less Products"
+      />
+    </div>
+  )}
+
+  {show < alldata.length && (
+    <div onClick={() => SetShow(show + 4)}>
+      <Button
+        className="bg-c1 text-white border border-transparent hover:bg-transparent hover:border-c1 hover:text-c1"
+        Text="View All Products"
+      />
+    </div>
+  )}
+
+
+
 </div>
+
 </div>
       </Container>
     </section>

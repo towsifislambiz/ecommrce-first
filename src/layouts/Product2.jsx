@@ -13,17 +13,22 @@ import F4s from '../assets/F4s.png'
 import F45s from '../assets/F45s.png'
 import Fs3 from '../assets/Fs3.png'
 import Button from '../Components/Button'
-import { Link } from 'react-router-dom'
+import { data, Link } from 'react-router-dom'
 
 const Product2 = () => {
+    const START_INDEX = 9
+  const INITIAL_SHOW = 17
+
   let [alldata , SetAlldata]=useState([])
+    let [show , SetShow]=useState(INITIAL_SHOW)
 
 useEffect(() => {
-  fetch('https://fakestoreapi.com/products')
-    .then(res => res.json())
-    .then(data => SetAlldata(data))
-    .catch(err => console.log(err))
+  fetch('https://dummyjson.com/products')
+    .then(res=>res.json())
+    .then(data=>SetAlldata(data.products))
 }, [])
+
+
 
   return (
   <section className='mb-[168px]'>
@@ -37,18 +42,17 @@ useEffect(() => {
 <div className='flex gap-x-7.5 flex-wrap gap-y-15 mb-15'>
 
   {
-  alldata.map((item , index) => (
+  alldata.slice(START_INDEX,show).map((item , index) => (
 
-    index>9  && index<18 &&
 
     <Card2
-      key={item.id}
-      src1={item.image}
-      Text={item.title}
-      value1={`$${item.price}`}
-      value2="$160"
-      src2={Fs5}
-      num="(88)"
+   key={item.id}
+         src1={item.thumbnail}
+         Text={item.title}
+         value1={`$${item.price}`}
+         value2="$160"
+         src2={Fs5}
+         num={item.stock}
     />
   ))
 }
@@ -57,11 +61,21 @@ useEffect(() => {
 </div> 
 
 <div className='flex justify-center'> 
-<Link to="/ProductPage">
+{
+  show >= alldata.length ? <div onClick={() => SetShow(INITIAL_SHOW)}>
+              <Button
+                className="bg-c1 text-white border border-transparent hover:bg-transparent hover:border-c1 hover:text-c1"
+                Text="Less All Products"
+              />
+            </div> : <>
+  <div onClick={()=>SetShow(alldata.length)}>
+  
 <Button
   className="bg-c1 text-white border border-transparent hover:bg-transparent hover:border-c1 hover:text-c1"
   Text="View All Products"
-/></Link>
+/>
+</div></>
+}
 </div>
 
     </Container>

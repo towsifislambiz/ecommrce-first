@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Subnav from "../layouts/Subnav";
 import Navber from "../layouts/Navber";
 import Banner from "../layouts/Banner";
@@ -14,6 +14,11 @@ import Footer from "../layouts/Footer";
 
 
 const Home = () => {
+
+   useEffect(() => {
+    window.scrollTo({ top: 0 })
+  })
+
   return (
     <div>
       <Subnav/>
