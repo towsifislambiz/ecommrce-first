@@ -138,7 +138,7 @@ backdrop-blur-md border border-cyan-400/10 shadow-lg absolute top-12 rounded-[10
   <FaRegHeart className="group-hover:animate-icon-shake" />
 </Link>
 
-  <span className="w-4 h-4 bg-c1 absolute -top-1 -right-1 rounded-full text-xs font-pop font-normal flex justify-center items-center text-white group-hover:animate-icon-shake">{Data.length}</span>
+  <span className="w-4 h-4 bg-amber-300  absolute -top-1 -right-1 rounded-full text-xs font-pop font-bold flex justify-center items-center text-black group-hover:animate-icon-shake">{Data.length}</span>
 </span> 
 
 
@@ -148,7 +148,7 @@ backdrop-blur-md border border-cyan-400/10 shadow-lg absolute top-12 rounded-[10
     <BsCart3 className="hover:animate-icon-shake" />
    </Link>
 
-  <span className="w-4 h-4 bg-c1 absolute -top-1 -right-1 rounded-full text-xs font-pop font-normal flex justify-center items-center text-white group-hover:animate-icon-shake">{cartData.length}</span>
+  <span className="w-4 h-4 bg-amber-300 absolute -top-1 -right-1 rounded-full text-xs font-pop font-bold flex justify-center items-center text-black group-hover:animate-icon-shake">{cartData.length}</span>
 </span>
 <span className="text-2xl cursor-pointer">
 <Link to="/Account">

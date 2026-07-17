@@ -13,8 +13,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { activeuser } from '../slices/BreadcrumbSlice'
 import { RxSlash } from 'react-icons/rx'
 import { getNumericPrice, getItemImage } from '../utils/priceHelpers'
+import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+    const auth = getAuth();
+  const navigate = useNavigate();
+    const [showAuthPopup, setShowAuthPopup] = useState(false)
    const [Total, SetTotal] = useState("")
  
  let dispatch=useDispatch()
@@ -35,6 +40,15 @@ const Cart = () => {
   SetTotal(total.toFixed(2));
 }, [Data]);
   
+ const handleCheckout = () => {
+  if (auth.currentUser) {
+    // User Login আছে
+    navigate("/checkout");
+  } else {
+    // Login নেই
+    setShowAuthPopup(true);
+  }
+};
 
   
   return (
@@ -233,10 +247,87 @@ const Cart = () => {
 </div>
 
 <div className='flex justify-center mb-8'>
-<Link to="/CheckOut" onClick={() => dispatch(ClearBuyNow())}>
-     <Button className='bg-c1 border border-transparent text-white hover:bg-transparent hover:border-c1 hover:text-c1' Text="Procees to checkout"/>
-</Link>
+
+<button
+  onClick={handleCheckout}
+  className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#F43F5E] to-[#FB7185] text-white font-semibold text-lg hover:scale-105 duration-300"
+>
+  Proceed to Checkout
+</button>
 </div>
+
+
+{
+  showAuthPopup && (
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex justify-center items-center z-[999]">
+
+      <div className="relative w-[430px] rounded-3xl border border-white/10 bg-[#111827] shadow-[0_0_60px_rgba(236,72,153,.15)] overflow-hidden">
+
+        {/* Top Glow */}
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-pink-500/20 blur-3xl"></div>
+
+        <div className="relative p-8">
+
+          {/* Close */}
+          <button
+            onClick={() => setShowAuthPopup(false)}
+            className="absolute right-5 top-5 text-gray-400 hover:text-white text-2xl duration-300"
+          >
+            ✕
+          </button>
+
+          {/* Lock Icon */}
+          <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-r from-pink-500 to-violet-600 flex justify-center items-center text-4xl shadow-lg">
+            🔒
+          </div>
+
+          <h2 className="text-white text-3xl font-bold text-center mt-6">
+            Authentication Required
+          </h2>
+
+          <p className="text-gray-400 text-center mt-4 leading-7">
+            Please login or create an account
+            before proceeding to checkout.
+          </p>
+
+          {/* Login */}
+          <Link to="/Login">
+            <button
+              onClick={() => setShowAuthPopup(false)}
+              className="w-full mt-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-violet-600 text-white font-semibold text-lg hover:scale-105 duration-300"
+            >
+              Login
+            </button>
+          </Link>
+
+          {/* Signup */}
+          <Link to="/SignUp">
+            <button
+              onClick={() => setShowAuthPopup(false)}
+              className="w-full mt-4 py-4 rounded-2xl border border-gray-600 text-white font-semibold hover:bg-white/10 duration-300"
+            >
+              Create Account
+            </button>
+          </Link>
+
+          {/* Continue Shopping */}
+          <button
+            onClick={() => {
+              setShowAuthPopup(false)
+              setCartopen(false)
+            }}
+            className="w-full mt-5 text-gray-400 hover:text-white duration-300"
+          >
+            Continue Shopping
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  )
+}
                 </div>
                 </div>
             </div>

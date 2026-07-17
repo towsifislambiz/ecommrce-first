@@ -7,8 +7,9 @@ import Sbimg from '../assets/Sb-img.png'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { EmailAuthProvider } from 'firebase/auth/cordova'
 import { log } from 'firebase/firestore/pipelines'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
  import { Bounce, ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom'
 const SBanner = () => {
   const auth = getAuth();
  let EmailRegex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
@@ -23,6 +24,7 @@ const [emailError, SetEmailError] = useState("");
 const [password, setPassword] = useState("");
 let [PasswordError , SetPasswordError]=useState()
 const [showPassword, setShowPassword] = useState(false);
+const navigate=useNavigate()
 
 const handleEmail = (e) => {
   setEmail(e.target.value);
@@ -66,19 +68,55 @@ if(
     digit.test(password) &&
     special.test(password) &&
     characters.test(password)){
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-      toast.success("Registretion Successfull");
-      
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-        
-        
-        });
+
+   signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+
+    if(userCredential.user.emailVerified){
+toast.success("login Successfully")
+setTimeout(() => {
+  
+  navigate("/")
+}, 2000);
+    }else{
+      toast.error("Verify Your Email")
+    }
+    
+
+
+  })
+  .catch((error) => {
+   switch (error.code) {
+
+    case "auth/invalid-credential":
+      toast.error("Email or Password is incorrect!");
+      break;
+
+    case "auth/user-not-found":
+      toast.error("No account found with this email!");
+      break;
+
+    case "auth/wrong-password":
+      toast.error("Incorrect password!");
+      break;
+
+    case "auth/invalid-email":
+      toast.error("Invalid email address!");
+      break;
+
+    case "auth/too-many-requests":
+      toast.error("Too many failed attempts. Try again later.");
+      break;
+
+    case "auth/network-request-failed":
+      toast.error("Check your internet connection.");
+      break;
+
+    default:
+      toast.error(error.message);
+  }
+  });
+
     }
 
 }

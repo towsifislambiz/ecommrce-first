@@ -15,6 +15,7 @@ import { activeuser } from '../slices/BreadcrumbSlice'
 import { RxSlash } from 'react-icons/rx'
 import { getNumericPrice, getItemImage } from '../utils/priceHelpers'
 
+
 const CheckOut = () => {
 const [paymentMethod, setPaymentMethod] = useState("bank");
 
@@ -35,6 +36,8 @@ useEffect(() => {
   dispatch(activeuser("CheckOut"));
 }, []);
 const history = useSelector((state) => state.breadcrumb.history);
+
+
 
   return (
     <div>

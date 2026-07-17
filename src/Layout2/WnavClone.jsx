@@ -21,7 +21,7 @@ const Navber = () => {
   const [input, SetInput] = useState("")
   const [showDropdown, setShowDropdown] = useState(false)
    let Data=useSelector(state=>state.Cart.value)
-     const cartData = useSelector((state) => state.Cart.value);
+     const wishData = useSelector((state) => state.Wish.value);
 
   const searchRef = useRef(null)
   const dispatch=useDispatch()
@@ -134,7 +134,7 @@ backdrop-blur-md border border-cyan-400/10  shadow-lg absolute top-12 rounded-[1
   <FaRegHeart className="group-hover:animate-icon-shake" />
 </Link>
 
-  <span className="w-4 h-4 bg-c1 absolute -top-1 -right-1 rounded-full text-xs font-pop font-normal flex justify-center items-center text-white group-hover:animate-icon-shake">{cartData.length}</span>
+  <span className="w-4 h-4 bg-amber-300 absolute -top-1 -right-1 rounded-full text-xs font-pop font-bold flex justify-center items-center text-black group-hover:animate-icon-shake">{wishData.length}</span>
 </span>
 
 
@@ -142,7 +142,7 @@ backdrop-blur-md border border-cyan-400/10  shadow-lg absolute top-12 rounded-[1
  <span className="group relative inline-block text-2xl cursor-pointer mr-5">
  <BsCart3 className="hover:animate-icon-shake" />
 
-  <span className="w-4 h-4 bg-c1 absolute -top-1 -right-1 rounded-full text-xs font-pop font-normal flex justify-center items-center text-white group-hover:animate-icon-shake">{Data.length}</span>
+  <span className="w-4 h-4 bg-amber-300 absolute -top-1 -right-1 rounded-full text-xs font-pop font-bold flex justify-center items-center text-black group-hover:animate-icon-shake">{Data.length}</span>
 </span>
 
 

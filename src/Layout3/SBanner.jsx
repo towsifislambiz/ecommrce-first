@@ -4,12 +4,12 @@ import Button from '../Components/Button'
 import Image from '../Components/Image'
 import Google from '../assets/Google.png'
 import Sbimg from '../assets/Sb-img.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Login from '../pages/Login'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { log } from 'firebase/firestore/pipelines'
  import { Bounce, ToastContainer, toast } from 'react-toastify';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword  , sendEmailVerification , updateProfile } from "firebase/auth";
 
 const SBanner = () => {
   const auth = getAuth();
@@ -26,7 +26,7 @@ let [emailError , SetEmailError]=useState()
 let [password,SetPassword]=useState("")
 let [PasswordError , SetPasswordError]=useState()
 const [showPassword, setShowPassword] = useState(false);
-
+const navigate=useNavigate()
 
 let handleName=(e)=>{
   SetName(e.target.value);
@@ -90,15 +90,31 @@ const handleCreatAccount = () => {
     characters.test(password)
   ){
 createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-toast.success("Registretion Successfull");
+  .then(async (userCredential) => {
 
+    await updateProfile(userCredential.user, {
+      displayName: name,
+    });
+
+    await sendEmailVerification(userCredential.user);
+
+    toast.success("Registration Successful!", {
+      autoClose: 2000,
+    });
+
+    setTimeout(() => {
+      navigate("/Login");
+    }, 2000);
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-  console.log(errorCode);
-  console.log(errorMessage);
+ 
+  if(errorCode.includes("auth/email-already-in-use")){
+toast.error("This email is already registered. Please use another email.", {
+  autoClose: 3000,
+});
+  }
   
   
   });
@@ -119,7 +135,7 @@ rtl={false}
 pauseOnFocusLoss
 draggable
 pauseOnHover
-theme="Light"
+theme="dark"
 transition={Bounce}
 />
       {/* Left Side Image */}

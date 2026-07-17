@@ -30,13 +30,17 @@ import { activeuser } from '../slices/BreadcrumbSlice'
 import { RxSlash } from 'react-icons/rx'
 import { BuyNowProduct } from "../slices/BuyNowSlice";
 import { Addtocart } from "../slices/CardSlice";
+import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 const ProductDetails  = () => {
+    const auth = getAuth();
+
     let [alldata , SetAlldata]=useState({})
   const [selected, setSelected] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
   const [quantity, setQuantity] = useState(1);
+   const [showAuthPopup, setShowAuthPopup] = useState(false)
 
 
 const navigate = useNavigate();
@@ -53,6 +57,16 @@ const handleBuyNow = () => {
   );
 
   navigate("/CheckOut");
+};
+
+ const handleCheckout = () => {
+  if (auth.currentUser) {
+    // User Login আছে
+    navigate("/checkout");
+  } else {
+    // Login নেই
+    setShowAuthPopup(true);
+  }
 };
 
 
@@ -304,13 +318,12 @@ useEffect(() => {
 
 
 
-<div
- onClick={handleBuyNow}
+<button
+  onClick={handleCheckout}
+  className="px-8 py-4 ml-4 rounded-xl bg-gradient-to-r from-[#F43F5E] to-[#FB7185] text-white font-semibold text-lg hover:scale-105 duration-300"
 >
-  <button className='bg-c1 border border-transparent text-white hover:bg-transparent hover:border-c1 hover:text-c1 duration-300 ml-4 py-3 px-12 rounded cursor-pointer font-pop text-base font-medium ' >
   Buy Now
 </button>
-</div>
 
 
 <div className='w-12.5 h-12.5 rounded border border-black/50 ml-5 flex justify-center items-center'>
@@ -362,6 +375,78 @@ useEffect(() => {
 <Card src1={Fcard3} Text='IPS LCD Gaming Monitor' value1='$370' value2='$400' src2={Fs5} num='(99)'/>
 <Card src1={Fcard4} Text='HAVIT HV-G92 Gamepad' value1='$375' value2='$400' src2={F45s} num='(99)'/>
 </div>
+
+{
+  showAuthPopup && (
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex justify-center items-center z-[999]">
+
+      <div className="relative w-[430px] rounded-3xl border border-white/10 bg-[#111827] shadow-[0_0_60px_rgba(236,72,153,.15)] overflow-hidden">
+
+        {/* Top Glow */}
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-pink-500/20 blur-3xl"></div>
+
+        <div className="relative p-8">
+
+          {/* Close */}
+          <button
+            onClick={() => setShowAuthPopup(false)}
+            className="absolute right-5 top-5 text-gray-400 hover:text-white text-2xl duration-300"
+          >
+            ✕
+          </button>
+
+          {/* Lock Icon */}
+          <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-r from-pink-500 to-violet-600 flex justify-center items-center text-4xl shadow-lg">
+            🔒
+          </div>
+
+          <h2 className="text-white text-3xl font-bold text-center mt-6">
+            Authentication Required
+          </h2>
+
+          <p className="text-gray-400 text-center mt-4 leading-7">
+            Please login or create an account
+            before proceeding to checkout.
+          </p>
+
+          {/* Login */}
+          <Link to="/Login">
+            <button
+              onClick={() => setShowAuthPopup(false)}
+              className="w-full mt-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-violet-600 text-white font-semibold text-lg hover:scale-105 duration-300"
+            >
+              Login
+            </button>
+          </Link>
+
+          {/* Signup */}
+          <Link to="/SignUp">
+            <button
+              onClick={() => setShowAuthPopup(false)}
+              className="w-full mt-4 py-4 rounded-2xl border border-gray-600 text-white font-semibold hover:bg-white/10 duration-300"
+            >
+              Create Account
+            </button>
+          </Link>
+
+          {/* Continue Shopping */}
+          <button
+            onClick={() => {
+              setShowAuthPopup(false)
+              setCartopen(false)
+            }}
+            className="w-full mt-5 text-gray-400 hover:text-white duration-300"
+          >
+            Continue Shopping
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  )
+}
 
 </Container>
 </section>
