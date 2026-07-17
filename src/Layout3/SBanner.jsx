@@ -26,6 +26,7 @@ let [emailError , SetEmailError]=useState()
 let [password,SetPassword]=useState("")
 let [PasswordError , SetPasswordError]=useState()
 const [showPassword, setShowPassword] = useState(false);
+const [loading, setLoading] = useState(false);
 const navigate=useNavigate()
 
 let handleName=(e)=>{
@@ -89,6 +90,7 @@ const handleCreatAccount = () => {
     special.test(password) &&
     characters.test(password)
   ){
+    setLoading(true);
 createUserWithEmailAndPassword(auth, email, password)
   .then(async (userCredential) => {
 
@@ -101,12 +103,14 @@ createUserWithEmailAndPassword(auth, email, password)
     toast.success("Registration Successful!", {
       autoClose: 2000,
     });
+    setLoading(false);
 
     setTimeout(() => {
       navigate("/Login");
     }, 2000);
   })
   .catch((error) => {
+    setLoading(false);
     const errorCode = error.code;
     const errorMessage = error.message;
  
@@ -349,12 +353,35 @@ transition={Bounce}
   )}
 </div>
 
-              <div
-              onClick={handleCreatAccount}
-              >
+           
+                
+<div
+  onClick={!loading ? handleCreatAccount : undefined}
+>
                 
 <Button
-  Text="Create Account"
+  Text={
+    loading ? (
+      <div className="flex items-center justify-center gap-3">
+        <span
+          className="
+          w-5
+          h-5
+          border-4
+          border-white/40
+          border-t-white
+          rounded-full
+          animate-spin
+          "
+        ></span>
+
+        Creating...
+      </div>
+    ) : (
+      "Create Account"
+    )
+  }
+
   className="
     w-full
     h-14
@@ -379,8 +406,10 @@ transition={Bounce}
     active:scale-95
   "
 />
+
+</div>
               </div>
-              </div>
+              
 
  <button
   className="
