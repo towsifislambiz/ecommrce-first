@@ -14,7 +14,7 @@ const Flash = () => {
   const [show, SetShow] = useState(4)
 
   // Flash Sale End Check
-  const FLASH_SALE_DATE = "2026-07-20T23:59:59";
+  const FLASH_SALE_DATE = "2026-08-01T23:59:59";
 useEffect(() => {
   const targetDate = new Date(FLASH_SALE_DATE).getTime();
 
